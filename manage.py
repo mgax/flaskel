@@ -5,7 +5,9 @@ from flask.ext.script import Manager
 
 
 def create_app():
+    from views import views
     app = flask.Flask(__name__)
+    app.register_blueprint(views)
     return app
 
 
