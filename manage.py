@@ -1,4 +1,5 @@
 import flask
+from flask.ext.script import Manager
 
 
 def create_app():
@@ -6,5 +7,8 @@ def create_app():
     return app
 
 
+manager = Manager(create_app)
+
+
 if __name__ == '__main__':
-    create_app().run()
+    manager.run()
