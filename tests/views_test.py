@@ -14,4 +14,4 @@ class HomepageTest(unittest.TestCase):
         client = self.app.test_client()
         resp = client.get('/')
         self.assertEqual(resp.status_code, 200)
-        self.assertEqual(resp.data, "Hello Flask!")
+        self.assertIn("Hello Flask!", resp.data)
