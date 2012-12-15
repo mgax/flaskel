@@ -26,4 +26,5 @@ manager = Manager(create_app)
 
 
 if __name__ == '__main__':
+    manager._commands['runserver'].use_reloader = DEBUG
     manager.run()
