@@ -6,8 +6,14 @@ from flask.ext.script import Manager
 
 def create_app():
     from views import views
+
     app = flask.Flask(__name__)
     app.register_blueprint(views)
+
+    @app.route('/_crashme')
+    def crashme():
+        raise RuntimeError("Crashing, as requested.")
+
     return app
 
 
